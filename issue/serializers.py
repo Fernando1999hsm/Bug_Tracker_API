@@ -18,6 +18,8 @@ class IssueListSerializer(serializers.ModelSerializer):
 
 
 class ApplicationSerializer(serializers.ModelSerializer):
+    open_issues_count = serializers.IntegerField(read_only=True)
+
     class Meta:
         model = Application
-        fields = ['id', 'code', 'name']
+        fields = ['id', 'code', 'name', 'open_issues_count']
